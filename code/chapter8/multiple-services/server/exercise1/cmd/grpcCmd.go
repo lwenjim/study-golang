@@ -5,7 +5,7 @@ import (
 	"errors"
 	"flag"
 	"fmt"
-	"github.com/lwenjim/code/chapter8/user-service/service"
+	"github.com/lwenjim/code/chapter8/multiple-services/server/exercise1/service"
 	"google.golang.org/grpc"
 	"google.golang.org/protobuf/encoding/protojson"
 	"io"
@@ -60,7 +60,12 @@ func getUserResponseJson(c grpConfig, result *service.UserGetReply) ([]byte, err
 	return protojson.Marshal(result)
 }
 
+func getRepoServiceClient(conn *grpc.ClientConn) service.RepoClient {
+	return service.NewRepoClient(conn)
+}
+
 func callUsersMethod(usersClient service.UsersClient, c grpConfig) ([]byte, error) {
+
 	switch c.method {
 	case "GetUser":
 		req, err := createUserRequest(c.request)
@@ -72,6 +77,43 @@ func callUsersMethod(usersClient service.UsersClient, c grpConfig) ([]byte, erro
 			return nil, err
 		}
 		respData, err := getUserResponseJson(c, result)
+		return respData, err
+	case "":
+		return nil, ErrInvalidGrpcMethod
+	default:
+		return nil, ErrInvalidGrpcMethod
+	}
+}
+
+func createGetRepoRequest(jsonQuery string) (*service.RepoGetRequest, error) {
+	v := service.RepoGetRequest{}
+	input := []byte(jsonQuery)
+	return &v, protojson.Unmarshal(input, &v)
+}
+
+func getRepos(client service.RepoClient, r *service.RepoGetRequest) (*service.RepoGetReply, error) {
+	return client.GetRepos(context.Background(), r)
+}
+
+func getReposResponseJson(c grpConfig, result *service.RepoGetReply) ([]byte, error) {
+	if c.prettyPrint {
+		return []byte(protojson.Format(result)), nil
+	}
+	return protojson.Marshal(result)
+}
+
+func callRepoMethod(repoClient service.RepoClient, c grpConfig) ([]byte, error) {
+	switch c.method {
+	case "GetRepos":
+		req, err := createGetRepoRequest(c.request)
+		if err != nil {
+			return nil, InvalidInputError{Err: err}
+		}
+		result, err := getRepos(repoClient, req)
+		if err != nil {
+			return nil, err
+		}
+		respData, err := getReposResponseJson(c, result)
 		return respData, err
 	case "":
 		return nil, ErrInvalidGrpcMethod
@@ -127,10 +169,15 @@ grpc: <options> server`
 			return err
 		}
 		fmt.Fprintln(w, string(respJson))
+	case "Repo":
+		repoClient := getRepoServiceClient(conn)
+		respJson, err := callRepoMethod(repoClient, c)
+		if err != nil {
+			return err
+		}
+		fmt.Fprintln(w, string(respJson))
 	default:
-		return errors.New("unrecognized")
+		return errors.New("unrecognized service")
 	}
-
-	fmt.Fprintln(w, "Executing grpc command")
 	return nil
 }

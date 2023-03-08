@@ -1,10 +1,10 @@
-module github.com/lwenjim/code/chapter8/user-service/client-json/exercise1
+module github.com/lwenjim/code/chapter8/multiple-services/server/exercise1
 
 go 1.19
 
 require google.golang.org/grpc v1.53.0
 require (
-	github.com/lwenjim/code/chapter8/user-service/service v0.0.0
+	github.com/lwenjim/code/chapter8/multiple-services/server/exercise1/service v0.0.0
 )
 require (
 	github.com/golang/protobuf v1.5.2 // indirect
@@ -16,5 +16,5 @@ require (
 )
 
 replace (
-	github.com/lwenjim/code/chapter8/user-service/service => ./service
+	github.com/lwenjim/code/chapter8/multiple-services/server/exercise1/service => ./service
 )

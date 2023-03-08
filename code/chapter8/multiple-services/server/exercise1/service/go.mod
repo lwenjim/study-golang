@@ -1,4 +1,4 @@
-module github.com/lwenjim/code/chapter8/user-service/client-json/exercise1/service
+module github.com/lwenjim/code/chapter8/multiple-services/server/exercise1/service
 
 go 1.19
 

@@ -3,7 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
-	"github.com/lwenjim/code/chapter8/user-service/client-json/exercise1/cmd"
+	"github.com/lwenjim/code/chapter8/multiple-services/server/exercise1/cmd"
 	"io"
 	"os"
 )
@@ -43,6 +43,7 @@ func handleCommand(w io.Writer, args []string) error {
 func main() {
 	err := handleCommand(os.Stdout, os.Args[1:])
 	if err != nil {
+		fmt.Println(err.Error())
 		os.Exit(1)
 	}
 }
