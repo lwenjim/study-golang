@@ -46,7 +46,6 @@ func setupHandlers(mux *http.ServeMux, config appConfig) {
 }
 
 func main() {
-
 	listenAddr := os.Getenv("LISTEN_ADDR")
 	if len(listenAddr) == 0 {
 		listenAddr = ":8880"
@@ -54,9 +53,7 @@ func main() {
 	config := appConfig{
 		logger: log.New(os.Stdout, "", log.Ldate|log.Ltime|log.Lshortfile),
 	}
-
 	mux := http.NewServeMux()
 	setupHandlers(mux, config)
-
 	log.Fatal(http.ListenAndServe(listenAddr, mux))
 }
