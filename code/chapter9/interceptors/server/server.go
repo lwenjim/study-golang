@@ -19,7 +19,10 @@ type userService struct {
 	service.UnimplementedUsersServer
 }
 
-func (s userService) GetUser(ctx context.Context, in *service.UserGetRequest) (*service.UserGetReply, error) {
+func (s userService) GetUser(
+	ctx context.Context,
+	in *service.UserGetRequest,
+) (*service.UserGetReply, error) {
 	log.Printf("Received request for user with Email: %s Id: %s\n", in.Email, in.Id)
 	components := strings.Split(in.Email, "@")
 	if len(components) != 2 {

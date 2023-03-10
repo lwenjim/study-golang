@@ -54,11 +54,6 @@ func loggingStreamInterceptor(
 	handler grpc.StreamHandler,
 ) error {
 	start := time.Now()
-	//serverStream := wrappedServerStream{
-	//	ServerStream: stream,
-	//	messageSent:  0,
-	//	messageRcvd:  0,
-	//}
 	err := handler(srv, stream)
 	ctx := stream.Context()
 	logMessage(
