@@ -44,6 +44,7 @@ func Test_parseArgs(t *testing.T) {
 		if c.numTimes != tc.numTimes {
 			t.Errorf("Expected numTimes to be: %v, go: %v\n", tc.numTimes, c.numTimes)
 		}
+
 	}
 }
 
