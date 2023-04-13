@@ -1,0 +1,31 @@
+
+
+
+```
+#markdownlivepre
+drop table if exists `user`;
+create table `user`(
+	`id` int unsigned auto_increment comment '编号', 
+	`username` varchar(100) comment '用户名',
+	`password` varchar(100) comment '密码',
+	`mark` varchar(200) comment '备注',
+	`created_time` timestamp comment '创建时间',
+	`updated_time` timestamp comment '修改时间',
+	index username(`username`) using btree comment '普通索引',
+	unique password(`password`) using btree comment '唯一索引',
+	fulltext index ftext(`mark`) comment '全文索引',
+	primary key primary_key(`id`) comment '主键索引' 
+) engine=innodb default charset=utf8mb4 collate=utf8mb4_unicode_ci;
+
+insert into `user`(
+`username`,
+`password`,
+`mark`,
+`created_time`,
+`updated_time`
+)values(
+'jim'
+)
+```
+
+
