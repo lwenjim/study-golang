@@ -4,7 +4,7 @@ go 1.19
 
 
 require (
-	github.com/lwenjim/code/chapter8/user-service/service v0.0.0
+	github.com/lwenjim/code/chapter8/user-service/service-v1 v0.0.0
 	google.golang.org/grpc v1.53.0
 )
 require (
@@ -16,4 +16,4 @@ require (
 	google.golang.org/protobuf v1.28.1 // indirect
 )
 
-replace github.com/lwenjim/code/chapter8/user-service/service => ../service-v2
+replace github.com/lwenjim/code/chapter8/user-service/service => ./../service2

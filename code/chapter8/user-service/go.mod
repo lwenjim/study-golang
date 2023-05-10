@@ -1,4 +1,4 @@
-module github.com/lwenjim/code/chapter8/user-service/service
+module github.com/lwenjim/code/chapter8/user-service
 
 go 1.19
 

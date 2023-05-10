@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"github.com/lwenjim/code/chapter8/user-service/service"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/test/bufconn"
 	"net"

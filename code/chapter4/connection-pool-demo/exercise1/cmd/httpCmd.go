@@ -5,7 +5,7 @@ import (
 	"errors"
 	"flag"
 	"fmt"
-	"github.com/lwenjim/code/chapter4/logging-middleware/exercise1/middleware"
+	"github.com/lwenjim/code/chapter4/connection-pool-demo/exercise1/middleware"
 	"io"
 	"log"
 	"net"

@@ -3,7 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
-	"github.com/lwenjim/code/chapter2/2.2/cmd"
+	"github.com/lwenjim/code/chapter4/connection-pool-demo/exercise1/cmd"
 	"io"
 	"os"
 )

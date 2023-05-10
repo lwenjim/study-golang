@@ -51,6 +51,7 @@ func createHTTPGetRequestWithTrace(ctx context.Context, url string) (*http.Reque
 	req = req.WithContext(ctxTrace)
 	return req, err
 }
+
 func handleUserApi(logger *log.Logger) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		done := make(chan bool)
@@ -98,6 +99,7 @@ func handleUserApi(logger *log.Logger) http.HandlerFunc {
 		logger.Println("I finished processing the request")
 	}
 }
+
 func setupHandlers(mux *http.ServeMux, timeoutDuration time.Duration, logger *log.Logger) {
 	userHandler := handleUserApi(logger)
 	hTimeout := http.TimeoutHandler(
@@ -108,6 +110,7 @@ func setupHandlers(mux *http.ServeMux, timeoutDuration time.Duration, logger *lo
 	mux.Handle("/api/users/", hTimeout)
 	mux.HandleFunc("/ping", handlePing)
 }
+
 func main() {
 	listenAddr := os.Getenv("LISTEN_ADDR")
 	if len(listenAddr) == 0 {

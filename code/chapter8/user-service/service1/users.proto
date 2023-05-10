@@ -1,20 +1,20 @@
 syntax = "proto3";
-option go_package = "github.com/lwenjim/code/chapter8/user-service/service";
+
+option go_package = "service1";
 
 service Users {
-  rpc GetUser (UserGetRequest) returns (UserGetReply){}
+  rpc GetUser (UserGetRequest) returns (UserGetReply);
 }
-
 message UserGetRequest {
   string email = 1;
-  string id = 2;
+  string id    = 2;
 }
 
 message User {
-  string id = 1;
+  string id         = 1;
   string first_name = 2;
   string lastt_name = 3;
-  int32 age = 4;
+  int32  age        = 4;
 }
 
 message UserGetReply {

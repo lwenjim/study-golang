@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/lwenjim/code/chapter8/user-service/service"
 	"google.golang.org/grpc"
 	"log"
 	"os"
