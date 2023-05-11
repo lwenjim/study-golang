@@ -1,5 +1,5 @@
-package main
+package mytest
 
-func main() {
+func haah() {
 
 }
