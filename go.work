@@ -2,14 +2,15 @@ go 1.19
 
 use (
 	.
-	code/chapter6/complex-server
-	code/chapter3/3.1/exercise1
-	code/chapter3/3.2/exercise1
-	code/chapter4/connection-pool-demo/exercise1
-	code/chapter4/data-downloader-redirect/exercise1
-	code/chapter4/header-middleware/exercise1
-	code/chapter4/logging-middleware/exercise1
-	code/chapter8/multiple-services/server
-	code/chapter8/multiple-services/server/exercise1
-	./code/chapter8/user-service/service1
+	./code/demo6/complex-server
+	./code/demo3/3.1/exercise1
+	./code/demo3/3.2/exercise1
+	./code/demo4/connection-pool-demo/exercise1
+	./code/demo4/data-downloader-redirect/exercise1
+	./code/demo4/header-middleware/exercise1
+	./code/demo4/logging-middleware/exercise1
+	./code/demo8/multiple-services/server
+	./code/demo8/multiple-services/server/exercise1
+	./code/demo8/user-service/client
+	./code/demo8/user-service/service1
 )
