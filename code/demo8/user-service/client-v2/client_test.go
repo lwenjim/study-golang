@@ -2,7 +2,7 @@ package main
 
 import (
 	"context"
-	"github.com/lwenjim/study-golang/code/demo8/user-service/service"
+	"github.com/lwenjim/study-golang/code/demo8/user-service/service2"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/test/bufconn"
 	"net"
@@ -10,17 +10,17 @@ import (
 )
 
 type dummyUserService struct {
-	service.UnimplementedUsersServer
+	service2.UnimplementedUsersServer
 }
 
-func (s *dummyUserService) GetUser(ctx context.Context, in *service.UserGetRequest) (*service.UserGetReply, error) {
-	u := service.User{
+func (s *dummyUserService) GetUser(ctx context.Context, in *service2.UserGetRequest) (*service2.UserGetReply, error) {
+	u := service2.User{
 		Id:        "user-123-a",
 		FirstName: "jane",
 		LasttName: "doe",
 		Age:       36,
 	}
-	return &service.UserGetReply{
+	return &service2.UserGetReply{
 		User: &u,
 	}, nil
 }
@@ -32,7 +32,7 @@ func startServer(s *grpc.Server, l net.Listener) error {
 func startTestGrpcServer() (*grpc.Server, *bufconn.Listener) {
 	l := bufconn.Listen(10)
 	s := grpc.NewServer()
-	service.RegisterUsersServer(s, &dummyUserService{})
+	service2.RegisterUsersServer(s, &dummyUserService{})
 	go func() {
 		startServer(s, l)
 	}()
@@ -56,7 +56,7 @@ func TestGetUser(t *testing.T) {
 
 	c := getUserServiceClient(conn)
 
-	result, err := c.GetUser(context.Background(), &service.UserGetRequest{Email: "jane@doe.com"})
+	result, err := c.GetUser(context.Background(), &service2.UserGetRequest{Email: "jane@doe.com"})
 
 	if err != nil {
 		t.Fatal(err)

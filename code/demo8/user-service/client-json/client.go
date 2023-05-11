@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"github.com/lwenjim/study-golang/code/demo8/user-service/service1"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
@@ -19,21 +20,21 @@ func setupGrpcConnection(addr string) (*grpc.ClientConn, error) {
 		grpc.WithBlock(),
 	)
 }
-func getUserServiceClient(conn *grpc.ClientConn) service.UsersClient {
-	return service.NewUsersClient(conn)
+func getUserServiceClient(conn *grpc.ClientConn) service1.UsersClient {
+	return service1.NewUsersClient(conn)
 }
 
-func getUser(client service.UsersClient, u *service.UserGetRequest) (*service.UserGetReply, error) {
+func getUser(client service1.UsersClient, u *service1.UserGetRequest) (*service1.UserGetReply, error) {
 	return client.GetUser(context.Background(), u)
 }
 
-func createUserRequest(jsonQuery string) (*service.UserGetRequest, error) {
-	u := service.UserGetRequest{}
+func createUserRequest(jsonQuery string) (*service1.UserGetRequest, error) {
+	u := service1.UserGetRequest{}
 	input := []byte(jsonQuery)
 	return &u, protojson.Unmarshal(input, &u)
 }
 
-func getUserResponseJson(result *service.UserGetReply) ([]byte, error) {
+func getUserResponseJson(result *service1.UserGetReply) ([]byte, error) {
 	return protojson.Marshal(result)
 }
 

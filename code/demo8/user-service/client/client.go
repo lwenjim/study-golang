@@ -3,9 +3,11 @@ package main
 import (
 	"context"
 	"fmt"
-	"google.golang.org/grpc"
 	"log"
 	"os"
+
+	"github.com/lwenjim/study-golang/code/demo8/user-service/service1"
+	"google.golang.org/grpc"
 )
 
 func setupGrpcConnection(addr string) (*grpc.ClientConn, error) {
@@ -17,11 +19,11 @@ func setupGrpcConnection(addr string) (*grpc.ClientConn, error) {
 	)
 }
 
-func getUserServiceClient(conn *grpc.ClientConn) service.UsersClient {
-	return service.NewUsersClient(conn)
+func getUserServiceClient(conn *grpc.ClientConn) service1.UsersClient {
+	return service1.NewUsersClient(conn)
 }
 
-func getUser(client service.UsersClient, u *service.UserGetRequest) (*service.UserGetReply, error) {
+func getUser(client service1.UsersClient, u *service1.UserGetRequest) (*service1.UserGetReply, error) {
 	return client.GetUser(context.Background(), u)
 }
 
@@ -37,7 +39,7 @@ func main() {
 
 	c := getUserServiceClient(conn)
 
-	result, err := getUser(c, &service.UserGetRequest{
+	result, err := getUser(c, &service1.UserGetRequest{
 		Email: "jane@doe.com",
 	})
 

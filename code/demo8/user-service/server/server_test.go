@@ -2,7 +2,7 @@ package main
 
 import (
 	"context"
-	"github.com/lwenjim/study-golang/code/demo8/user-service/service"
+	"github.com/lwenjim/study-golang/code/demo8/user-service/service2"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/test/bufconn"
 	"log"
@@ -39,10 +39,10 @@ func TestUserService(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	usersClient := service.NewUsersClient(client)
+	usersClient := service2.NewUsersClient(client)
 	resp, err := usersClient.GetUser(
 		context.Background(),
-		&service.UserGetRequest{
+		&service2.UserGetRequest{
 			Email: "jane@doe.com",
 			Id:    "foo-bar",
 		},

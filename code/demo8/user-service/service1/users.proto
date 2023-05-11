@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "github.com/lwenjim/code/chapter8/user-service/service1";
+package service1;
 
 service Users {
   rpc GetUser (UserGetRequest) returns (UserGetReply);

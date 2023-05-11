@@ -2,15 +2,95 @@ go 1.19
 
 use (
 	.
-	./code/demo6/complex-server
+	./code/deme1/1.1
+	./code/deme1/1.3
+	./code/deme1/1.4
+	./code/demo10/client-resiliency/client
+	./code/demo10/client-resiliency/server
+	./code/demo10/client-resiliency/service
+	./code/demo10/exercise1/client
+	./code/demo10/exercise1/server-tls
+	./code/demo10/exercise1/service
+	./code/demo10/exercise2/server
+	./code/demo10/exercise2/service
+	./code/demo10/server-healthcheck/server
+	./code/demo10/server-healthcheck/service
+	./code/demo10/svc-client-dxn/client
+	./code/demo10/svc-client-dxn/server
+	./code/demo10/svc-client-dxn/service
+	./code/demo10/svc-panic-handing/client
+	./code/demo10/svc-panic-handing/server
+	./code/demo10/svc-panic-handing/service
+	./code/demo10/svc-timeout/client
+	./code/demo10/svc-timeout/server
+	./code/demo10/svc-timeout/service
+	./code/demo10/user-service-tls/client
+	./code/demo10/user-service-tls/server
+	./code/demo10/user-service-tls/service
+	./code/demo2/2.1
+	./code/demo2/2.2
+	./code/demo2/2.3
+	./code/demo2/2.4
+	./code/demo3/3.1
 	./code/demo3/3.1/exercise1
+	./code/demo3/3.2
 	./code/demo3/3.2/exercise1
+	./code/demo3/3.3
+	./code/demo3/3.4
+	./code/demo4/connection-pool-demo
 	./code/demo4/connection-pool-demo/exercise1
+	./code/demo4/data-downloader
+	./code/demo4/data-downloader-redirect
 	./code/demo4/data-downloader-redirect/exercise1
+	./code/demo4/data-downloader-timeout
+	./code/demo4/header-middleware
 	./code/demo4/header-middleware/exercise1
+	./code/demo4/logging-middleware
 	./code/demo4/logging-middleware/exercise1
+	./code/demo5/basic-http-server
+	./code/demo5/context-metadata
+	./code/demo5/http-serve-mux
+	./code/demo5/streaming-decode
+	./code/demo5/streaming-response
+	./code/demo5/streaming-response/exercise1
+	./code/demo6/complex-server
+	./code/demo6/http-handle-type
+	./code/demo6/http-handle-type/exercise1
+	./code/demo6/middleware-chaining
+	./code/demo6/middleware-chaining/exercise1
+	./code/demo7/client-disconnect-handing
+	./code/demo7/graceful-shutdown
+	./code/demo7/handle-func-timeout
+	./code/demo7/handle-func-timeout/exercise1
+	./code/demo7/server-timeouts
+	./code/demo7/tls-server
+	./code/demo7/tls-server-test
 	./code/demo8/multiple-services/server
 	./code/demo8/multiple-services/server/exercise1
+	./code/demo8/multiple-services/server/exercise1/service
+	./code/demo8/multiple-services/service
 	./code/demo8/user-service/client
+	./code/demo8/user-service/client-json
+	./code/demo8/user-service/client-json/exercise1
+	./code/demo8/user-service/client-json/exercise1/service
+	./code/demo8/user-service/client-v2
+	./code/demo8/user-service/server
 	./code/demo8/user-service/service1
+	./code/demo8/user-service/service2
+	./code/demo9/bidi-streaming/client
+	./code/demo9/bidi-streaming/server
+	./code/demo9/bidi-streaming/service
+	./code/demo9/bindata-client-streaming/exercise1/client
+	./code/demo9/bindata-client-streaming/exercise1/server
+	./code/demo9/bindata-client-streaming/exercise1/service
+	./code/demo9/bindata-client-streaming/server
+	./code/demo9/bindata-client-streaming/service
+	./code/demo9/client-streaming/server
+	./code/demo9/client-streaming/service
+	./code/demo9/interceptors/client
+	./code/demo9/interceptors/server
+	./code/demo9/interceptors/service
+	./code/demo9/server-streaming/server
+	./code/demo9/server-streaming/service
+
 )

@@ -1,4 +1,4 @@
-module github.com/lwenjim/study-golang/code/chapter8/user-service/service2
+module github.com/lwenjim/study-golang/code/demo8/user-service/service2
 
 go 1.19
 

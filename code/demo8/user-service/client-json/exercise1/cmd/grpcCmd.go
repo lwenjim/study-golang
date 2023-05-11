@@ -5,7 +5,7 @@ import (
 	"errors"
 	"flag"
 	"fmt"
-	"github.com/lwenjim/study-golang/code/demo8/user-service/service"
+	"github.com/lwenjim/study-golang/code/demo8/user-service/client-json/exercise1/service"
 	"google.golang.org/grpc"
 	"google.golang.org/protobuf/encoding/protojson"
 	"io"
