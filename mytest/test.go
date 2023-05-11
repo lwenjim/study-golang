@@ -1,5 +1,5 @@
 package mytest
 
-func haah() {
-
+func Haah() string {
+	return "abc"
 }
