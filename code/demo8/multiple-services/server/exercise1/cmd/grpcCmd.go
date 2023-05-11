@@ -5,10 +5,11 @@ import (
 	"errors"
 	"flag"
 	"fmt"
+	"io"
+
 	"github.com/lwenjim/study-golang/code/demo8/multiple-services/server/exercise1/service"
 	"google.golang.org/grpc"
 	"google.golang.org/protobuf/encoding/protojson"
-	"io"
 )
 
 type grpConfig struct {
@@ -136,7 +137,7 @@ func HandleGrpc(w io.Writer, args []string) error {
 grpc: A gRPC client.
 
 grpc: <options> server`
-		fmt.Fprintf(w, usageString)
+		fmt.Fprint(w, usageString)
 		fmt.Fprintln(w)
 		fmt.Fprintln(w, "Options: ")
 		fs.PrintDefaults()

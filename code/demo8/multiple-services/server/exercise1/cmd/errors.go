@@ -2,12 +2,12 @@ package cmd
 
 import "errors"
 
-var ErrNoServerSpecified = errors.New("You have to specify the remote server.")
-var ErrInvalidHTTPMethod = errors.New("Invalid HTTP method")
-var ErrInvalidHTTPPostCommand = errors.New("Cannot specify both body and body-file")
+var ErrNoServerSpecified = errors.New("you have to specify the remote server")
+var ErrInvalidHTTPMethod = errors.New("invalid HTTP method")
+var ErrInvalidHTTPPostCommand = errors.New("cannot specify both body and body-file")
 var ErrInvalidHTTPPostRequest = errors.New("HTTP POST request must specify a non-empty JSON body")
-var ErrInvalidHTTPCommand = errors.New("Invalid HTTP command")
-var ErrInvalidGrpcMethod = errors.New("Invalid gRPC method")
+var ErrInvalidHTTPCommand = errors.New("invalid HTTP command")
+var ErrInvalidGrpcMethod = errors.New("invalid gRPC method")
 
 type FlagParsingError struct {
 	err error

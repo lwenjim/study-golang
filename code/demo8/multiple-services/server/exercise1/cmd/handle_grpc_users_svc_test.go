@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"context"
-	"github.com/lwenjim/study-golang/code/demo8/user-service/service"
+	"github.com/lwenjim/study-golang/code/demo8/multiple-services/server/exercise1/service"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/test/bufconn"
 	"log"

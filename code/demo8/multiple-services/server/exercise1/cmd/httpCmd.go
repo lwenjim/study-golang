@@ -5,7 +5,6 @@ import (
 	"errors"
 	"flag"
 	"fmt"
-	"github.com/lwenjim/study-golang/code/demo8/multiple-services/server/exercise1/middleware"
 	"io"
 	"log"
 	"net"
@@ -13,6 +12,8 @@ import (
 	"os"
 	"strings"
 	"time"
+
+	"github.com/lwenjim/study-golang/code/demo8/multiple-services/server/exercise1/middleware"
 )
 
 type httpConfig struct {
@@ -89,7 +90,7 @@ func HandleHttp(w io.Writer, args []string) error {
 http: A HTTP client.
 
 http: <options> server`
-		fmt.Fprintf(w, usageString)
+		fmt.Fprint(w, usageString)
 		fmt.Fprintln(w)
 		fmt.Fprintln(w)
 		fmt.Fprintln(w, "Options: ")

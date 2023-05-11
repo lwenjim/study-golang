@@ -37,7 +37,7 @@ func startTestHttpServer() *httptest.Server {
 				headers = append(headers, fmt.Sprintf("%s=%s", k, v[0]))
 			}
 		}
-		fmt.Fprintf(writer, strings.Join(headers, " "))
+		fmt.Fprint(writer, strings.Join(headers, " "))
 	})
 	mux.HandleFunc("/debug-basicauth", func(writer http.ResponseWriter, request *http.Request) {
 		u, p, ok := request.BasicAuth()
