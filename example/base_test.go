@@ -52,6 +52,7 @@ func qTestInteger(t *testing.T) {
 	fmt.Printf("%U\n", 651)
 	fmt.Printf("U+%04X\n", 651)
 }
+
 func TestFloat(t *testing.T) {
 	fmt.Printf("%b\n", 1230.98)
 	fmt.Printf("%s\n", strconv.FormatFloat(0.112, 'b', 1, 32))
@@ -89,6 +90,7 @@ func TestFloat(t *testing.T) {
 	// fmt.Printf("% d\n", []byte("abc"))
 
 }
+
 func aTestString(t *testing.T) {
 	fmt.Printf("%s\n", "abc")
 	fmt.Printf("%q\n", "abc\nab\tafsf\"")
